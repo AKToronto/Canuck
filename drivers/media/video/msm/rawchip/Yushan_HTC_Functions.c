@@ -1015,6 +1015,11 @@ int Yushan_Update_AEC_AWB_Params(rawchip_update_aec_awb_params_t *update_aec_awb
 	sGainsExpTime.uwPreDigGainGR = 0x100;
 	sGainsExpTime.uwPreDigGainR = 0x100;
 	sGainsExpTime.uwPreDigGainB = 0x100;
+#else
+	sGainsExpTime.uwPreDigGainGR = 0x100;
+	sGainsExpTime.uwPreDigGainR = 0x100;
+	sGainsExpTime.uwPreDigGainB = 0x100;
+#endif
 	sGainsExpTime.uwExposureTime = update_aec_awb_params->aec_params.exp;
 	sGainsExpTime.bRedGreenRatio = update_aec_awb_params->awb_params.rg_ratio;
 	sGainsExpTime.bBlueGreenRatio = update_aec_awb_params->awb_params.bg_ratio;
