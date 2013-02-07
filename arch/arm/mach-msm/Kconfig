@@ -2306,4 +2306,12 @@ config ANDROID_RAM_CONSOLE_APPEND_PMIC_STATUS_BITS
 	  Append PMIC status bits to end of /proc/last_kmsg for
 	  checking the boot / reset reason in detail
 
+config MSM_MPDEC
+        bool "Enable kernel based mpdecision"
+   depends on MSM_SMP
+      default n
+       help
+      This enables kernel based multi core control.
+	(up/down hotplug based on load)
+
 endif
