@@ -600,22 +600,22 @@ EXPORT_SYMBOL(hdmi_msm_get_io_base);
 /* Valid Pixel-Clock rates: 25.2MHz, 27MHz, 27.03MHz, 74.25MHz, 148.5MHz */
 static void hdmi_msm_setup_video_mode_lut(void)
 {
-	HDMI_SETUP_LUT(640x480p60_4_3);
+	/*HDMI_SETUP_LUT(640x480p60_4_3);
 	HDMI_SETUP_LUT(720x480p60_4_3);
-	HDMI_SETUP_LUT(720x480p60_16_9);
+	HDMI_SETUP_LUT(720x480p60_16_9);*/
 	HDMI_SETUP_LUT(1280x720p60_16_9);
-	/*HDMI_SETUP_LUT(1920x1080i60_16_9);*/
+	/*HDMI_SETUP_LUT(1920x1080i60_16_9);
 	HDMI_SETUP_LUT(1440x480i60_4_3);
 	HDMI_SETUP_LUT(1440x480i60_16_9);
-	/*HDMI_SETUP_LUT(1920x1080p60_16_9);*/
+	HDMI_SETUP_LUT(1920x1080p60_16_9);
 	HDMI_SETUP_LUT(720x576p50_4_3);
 	HDMI_SETUP_LUT(720x576p50_16_9);
 	HDMI_SETUP_LUT(1280x720p50_16_9);
 	HDMI_SETUP_LUT(1440x576i50_4_3);
 	HDMI_SETUP_LUT(1440x576i50_16_9);
-	/*HDMI_SETUP_LUT(1920x1080p50_16_9);*/
+	HDMI_SETUP_LUT(1920x1080p50_16_9);
 	HDMI_SETUP_LUT(1920x1080p24_16_9);
-	/*HDMI_SETUP_LUT(1920x1080p25_16_9);
+	HDMI_SETUP_LUT(1920x1080p25_16_9);
 	HDMI_SETUP_LUT(1920x1080p30_16_9);*/
 }
 
@@ -4545,7 +4545,7 @@ int __init hdmi_msm_init(void)
 	}
 
 	external_common_state = &hdmi_msm_state->common;
-	external_common_state->video_resolution = HDMI_VFRMT_1920x1080p24_16_9;
+	external_common_state->video_resolution = HDMI_VFRMT_1280x720p60_16_9;
 #ifdef CONFIG_FB_MSM_HDMI_3D
 	external_common_state->switch_3d = hdmi_msm_switch_3d;
 #endif
