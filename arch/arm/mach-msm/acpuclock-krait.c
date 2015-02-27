@@ -1094,11 +1094,14 @@ static struct notifier_block __cpuinitdata acpuclk_cpu_notifier = {
 static const int __init krait_needs_vmin(void)
 {
 #ifdef CONFIG_BYPASS_KRAIT_NEEDS_VMIN
+        return 0;
+#endif
+ 
 #ifdef CONFIG_CMDLINE_OPTIONS
-	if (volt_switch == 1)
-		return 0;
+        if (volt_switch == 1)
+                return 0;
 #else
-		return 0;
+                return 0;
 #endif
 #endif
 	switch (read_cpuid_id()) {
