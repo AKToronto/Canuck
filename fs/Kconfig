@@ -285,7 +285,7 @@ config ASYNC_FSYNC
 	default y
 
 config EXFAT_FS
-	bool "Exfat file system support"
+	tristate "exFAT File System Support"
 	default n
 	select NLS_UTF8
 
